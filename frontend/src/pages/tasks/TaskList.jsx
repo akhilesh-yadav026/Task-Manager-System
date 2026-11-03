@@ -237,7 +237,7 @@ const TaskList = () => {
         </div>
 
         <div className="flex flex-wrap gap-2">
-          <button
+         {canManageTasks && <button
             type="button"
             onClick={exportTasks}
             disabled={exporting}
@@ -245,7 +245,7 @@ const TaskList = () => {
           >
             <Download size={16} />
             {exporting ? "Exporting…" : "Export CSV"}
-          </button>
+          </button>}
           {canManageTasks && (
             <Link
               to={`${taskBasePath}/new`}
