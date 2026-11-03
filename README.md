@@ -187,5 +187,5 @@ All endpoints are prefixed with `/api`. Protected endpoints require a valid logi
 
 ## Author
 
-**Your Name**  
+**Akhilesh**  
 GitHub: [@akhilesh-yadav026](https://github.com/akhilesh-yadav026)
