@@ -1,3 +1,4 @@
+const bcrypt = require("bcrypt")
 const User = require("../models/user.model.js");
 const generateToken = require("../utils/generateToken.js");
 
@@ -71,6 +72,13 @@ const login = async (req,res) => {
       return res.status(401).json({
         success: false,
         message: "Invalid email ",
+      });
+    }
+     const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(401).json({
+        success: false,
+        message: "Invalid email or password",
       });
     }
     if (!user.isActive) {
